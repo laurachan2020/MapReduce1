@@ -11,4 +11,4 @@ for line in sys.stdin:
     line = line.strip()
 
     if line.find(grepWord) != -1:
-        print '%s\t%s' % ( grepWord, line.strip() )    
+        print '%s\t%s' % ( line.strip(),1)    
