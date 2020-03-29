@@ -6,10 +6,13 @@ THIS_DIR=/usr/local/hadoop
 if [ -n "$1" ];
 then SUB_DIR="$1/" 
 fi
+echo "SUB_DIR = ${SUB_DIR}"
 
 if [ -n "$2" ];
 then PATTERN="$2" 
 fi
+
+echo "PATTERN = ${PATTERN}"
 
 
 ${THIS_DIR}/bin/hadoop dfsadmin -safemode leave
