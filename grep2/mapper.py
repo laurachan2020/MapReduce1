@@ -4,12 +4,12 @@
 import sys
 
 # input comes from STDIN (standard input)
-first = True
+if len(argv) >= 2:
+    grep_word = argv[1]
+
 for line in sys.stdin:
-    if first:
-        first = false;
-        grepWord = line.strip()
-        continue
+    # remove leading and trailing whitespace
+    line = line.strip()
 
     if line.find(grepWord) != -1:
-        print '%s\t%s' % ( grepWord, line.strip() )
+        print '%s\t%s' % ( grepWord, line.strip() )    
