@@ -33,27 +33,3 @@ expected output:
 foo	6
 quux	4
 ```
-
-*Question*: How would you update the simple grep above to manage __any__ type of search? (In this case it encodes the "f" / "x" searching inside the reducer function). So basically, what if I wanted to find all the words that have "oo" or all the words that start in "k" but end in "e" or all the words that have a single capital letter in them?
-
-As you can imagine, the fix is not to hardcode all of these scenarios inside the map/reduce functions but instead, to come up with a more generic way to solve this.
-
-
-Another example:
-
-```
-docker run \
-  -v $(pwd):/usr/local/hadoop/py \
-  -it sequenceiq/hadoop-docker:2.7.1 \
-  /usr/local/hadoop/py/py_runner.sh count
-```
-(notice the **count** keyword at the end  - corresponds to the folder **count**!)
-
-expected output:
-
-```
-bar	0
-foo	6
-labs	0
-quux	4
-```
