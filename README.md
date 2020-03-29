@@ -33,3 +33,17 @@ expected output:
 foo	6
 quux	4
 ```
+Another example:
+
+docker run \
+  -v $(pwd):/usr/local/hadoop/py \
+  -it sequenceiq/hadoop-docker:2.7.1 \
+  /usr/local/hadoop/py/py_runner.sh count
+(notice the count keyword at the end - corresponds to the folder count!)
+
+expected output:
+
+bar	0
+foo	6
+labs	0
+quux	4
