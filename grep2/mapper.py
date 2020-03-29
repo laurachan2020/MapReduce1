@@ -4,8 +4,7 @@
 import sys
 
 # input comes from STDIN (standard input)
-if len(argv) >= 2:
-    grep_word = argv[1]
+grep_word = sys.argv[1]
 
 for line in sys.stdin:
     # remove leading and trailing whitespace

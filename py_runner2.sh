@@ -18,7 +18,7 @@ ${THIS_DIR}/bin/hdfs dfs -put ${THIS_DIR}/py/${SUB_DIR}/sample/* ${THIS_DIR}/py/
 ${THIS_DIR}/bin/hadoop jar \
     ${THIS_DIR}/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar \
     -file ${THIS_DIR}/py/${SUB_DIR}/mapper.py \
-    -mapper ${THIS_DIR}/py/${SUB_DIR}/mapper.py $GREP_WORD\
+    -mapper '${THIS_DIR}/py/${SUB_DIR}/mapper.py $GREP_WORD'\
     -file ${THIS_DIR}/py/${SUB_DIR}/reducer.py	\
     -reducer "${THIS_DIR}/py/${SUB_DIR}/reducer.py ${*:2}" \
     -input ${THIS_DIR}/py/sample/* \
