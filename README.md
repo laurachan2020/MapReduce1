@@ -27,8 +27,7 @@ foo 6
 
 ```
 # Map Reduce Web Access Log 
-#	How many distinct IP addresses accessed this website and how many times?
-Use regular expression to implement grep function by Map Reduce
+	How many distinct IP addresses accessed this website and how many times?
 ```
 sudo docker run \
   -v $(pwd):/usr/local/hadoop/py \
@@ -36,4 +35,10 @@ sudo docker run \
   /usr/local/hadoop/py/py_webaccesslog_runner1.sh webaccesslog
 ```  
  output
+
+10.128.2.1      4257
+10.129.2.1      1652
+10.130.2.1      4056
+10.131.0.1      4198
+10.131.2.1      1626
 ```
