@@ -16,6 +16,11 @@ for line in sys.stdin:
             elements = words[2].split()
             if '.php' in elements[1]:
                 index = elements[1].index('.php')
-                pagename = elements[1][1:index+4]
+                if elements[1].startswith("//"):
+                    pagename = elements[1][2:index+4]
+                elif elements[1].startswith("/"):
+                    pagename = elements[1][1:index + 4]
+                else:
+                    pagename = elements[1][0:index + 4]
                 print '%s\t%s' % (pagename, 1)
 
