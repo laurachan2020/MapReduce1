@@ -42,3 +42,14 @@ sudo docker run \
 10.131.0.1      4198
 10.131.2.1      1626
 ```
+	How many times was each  distinct webpage (ie, home.php, etc) accessed
+```
+sudo docker run \
+  -v $(pwd):/usr/local/hadoop/py \
+  -it sequenceiq/hadoop-docker:2.7.1 \
+  /usr/local/hadoop/py/py_webaccesslog_runner2.sh webaccesslog
+```  
+ output
+
+
+```
