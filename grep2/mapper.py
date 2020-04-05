@@ -19,5 +19,3 @@ for line in sys.stdin:
         # tab-delimited; the trivial word count is 1
         if re.match(pattern, word):
             print '%s\t%s' % (word, 1)
-        else:
-            print '%s\t%s' % (word, 0)
