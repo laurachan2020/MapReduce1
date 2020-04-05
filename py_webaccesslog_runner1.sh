@@ -8,11 +8,6 @@ then SUB_DIR="$1/"
 fi
 echo "SUB_DIR = ${SUB_DIR}"
 
-if [ -n "$2" ];
-then PATTERN="$2" 
-fi
-
-echo "PATTERN = ${PATTERN}"
 
 
 ${THIS_DIR}/bin/hadoop dfsadmin -safemode leave
@@ -21,7 +16,7 @@ ${THIS_DIR}/bin/hdfs dfs -put ${THIS_DIR}/py/${SUB_DIR}sample/* ${THIS_DIR}/py/s
 ${THIS_DIR}/bin/hadoop jar \
     ${THIS_DIR}/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar \
     -file ${THIS_DIR}/py/${SUB_DIR}mapper1.py \
-    -mapper "${THIS_DIR}/py/${SUB_DIR}mapper1.py $PATTERN"\
+    -mapper "${THIS_DIR}/py/${SUB_DIR}mapper1.py"\
     -file ${THIS_DIR}/py/${SUB_DIR}reducer1.py	\
     -reducer "${THIS_DIR}/py/${SUB_DIR}reducer1.py ${*:2}" \
     -input ${THIS_DIR}/py/sample/* \
