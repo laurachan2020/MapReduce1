@@ -3,12 +3,14 @@
 
 import sys
 import re
-pattern = sys.argv[1]
+pat = re.compile("\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}")
 # input comes from STDIN (standard input)
 for line in sys.stdin:
     # remove leading and trailing whitespace
     line = line.strip()
     # split the line into words
     words = line.split(',')
-    ip = words[0]
-    print '%s\t%s' % (ip, 1)
+    if len(words)==4:
+        test = pat.match(words[0])
+        if test:
+            print '%s\t%s' % (words[0], 1)
