@@ -7,6 +7,7 @@ import sys
 current_ip_address = None
 current_page_name = None
 current_count = 0
+pageDic = {}
 
 # input comes from STDIN
 for line in sys.stdin:
@@ -26,7 +27,7 @@ for line in sys.stdin:
 
     # this IF-switch only works because Hadoop sorts map output
     # by key (here: word) before it is passed to the reducer
-    pageDic = {}
+
 
     if current_ip_address == ip_address:
         if pageDic[page_name]:
