@@ -7,7 +7,6 @@ import sys
 current_ip_address = None
 current_page_name = None
 current_count = 0
-word = None
 
 # input comes from STDIN
 for line in sys.stdin:
@@ -34,6 +33,7 @@ for line in sys.stdin:
             pageDic[page_name] += count
         else:
             pageDic[page_name] = count
+        current_count = pageDic[page_name]
     else:
         if current_ip_address and current_page_name and current_count:
             # write result to STDOUT
@@ -44,4 +44,4 @@ for line in sys.stdin:
 
 # do not forget to output the last word if needed!
 if current_ip_address == ip_address and current_page_name and current_count:
-    print '%s\t%s\t%s' % (current_ip_address, current_page_name,current_count)
+    print '%s\t%s\t%s' % (current_ip_address, current_page_name, current_count)

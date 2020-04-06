@@ -22,5 +22,5 @@ for line in sys.stdin:
                 else:
                     print '%s\t%s' % ('afternoon', 1)
             except Exception:
-                pass
+                continue
 
