@@ -16,7 +16,7 @@ for line in sys.stdin:
 
     # parse the input we got from mapper.py
     combined_key, count = line.split('\t', 1)
-    ip_address, page_name = combined_key.split('\:', 1)
+    ip_address, page_name = combined_key.split(':', 1)
 
     # convert count (currently a string) to int
     try:
@@ -31,14 +31,14 @@ for line in sys.stdin:
 
 
     if current_ip_address == ip_address:
-        if pageDic[ip_address] == None:
-            pageDic[ip_address] = {}
-            pageDic[ip_address][page_name] = 1
-        elif pageDic[ip_address][page_name] == None:
-            pageDic[ip_address][page_name] = 1
+        if pageDic[current_ip_address] == None:
+            pageDic[current_ip_address] = {}
+            pageDic[current_ip_address][current_page_name] = 1
+        elif pageDic[current_ip_address][current_page_name] == None:
+            pageDic[current_ip_address][current_page_name] = 1
         else:
-            pageDic[ip_address][page_name] += count
-        current_count = pageDic[ip_address][page_name]
+            pageDic[current_ip_address][current_page_name] += count
+        current_count = pageDic[current_ip_address][current_page_name]
     else:
         if current_ip_address and current_page_name and current_count:
             # write result to STDOUT
@@ -50,5 +50,5 @@ for line in sys.stdin:
 
 # do not forget to output the last word if needed!
 if current_ip_address == ip_address and current_page_name and current_count:
-    two_keys = current_ip_address+':'+current_page_name
-    print '%s\t%s' % (two_keys, current_count)
+    current_keys = current_ip_address+':'+current_page_name
+    print '%s\t%s' % (current_keys, current_count)
