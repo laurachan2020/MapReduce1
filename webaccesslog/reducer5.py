@@ -15,7 +15,8 @@ for line in sys.stdin:
     line = line.strip()
 
     # parse the input we got from mapper.py
-    ip_address, page_name, count = line.split('\t', 1)
+    combined_key, count = line.split('\t', 1)
+    ip_address, page_name = combined_key.split(':', 1)
 
     # convert count (currently a string) to int
     try:
@@ -38,11 +39,11 @@ for line in sys.stdin:
     else:
         if current_ip_address and current_page_name and current_count:
             # write result to STDOUT
-            print '%s\t%s\t%s' % (current_ip_address, current_page_name, current_count)
+            print '%s\t%s' % (current_ip_address+':'+current_page_name, current_count)
         current_count = count
         current_ip_address = ip_address
         current_page_name = page_name
 
 # do not forget to output the last word if needed!
 if current_ip_address == ip_address and current_page_name and current_count:
-    print '%s\t%s\t%s' % (current_ip_address, current_page_name, current_count)
+    print '%s\t%s' % (current_ip_address+':'+current_page_name, current_count)

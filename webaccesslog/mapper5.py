@@ -21,4 +21,4 @@ for line in sys.stdin:
                     pagename = elements[1][1:index + 4]
                 else:
                     pagename = elements[1][0:index + 4]
-                print '%s\t%s\t%s' % (words[0], pagename, 1)
+                print '%s\t%s' % (words[0]+':'+pagename, 1)
