@@ -15,8 +15,8 @@ ${THIS_DIR}/bin/hadoop jar \
     ${THIS_DIR}/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar \
     -file ${THIS_DIR}/py/${SUB_DIR}mapper5.py \
     -mapper "${THIS_DIR}/py/${SUB_DIR}mapper5.py"\
-    -file ${THIS_DIR}/py/${SUB_DIR}reducer5.py	\
-    -reducer "${THIS_DIR}/py/${SUB_DIR}reducer5.py ${*:2}" \
+    -file ${THIS_DIR}/py/${SUB_DIR}reducer1.py	\
+    -reducer "${THIS_DIR}/py/${SUB_DIR}reducer1.py ${*:2}" \
     -input ${THIS_DIR}/py/sample/* \
     -output ${THIS_DIR}/py-output
 ${THIS_DIR}/bin/hdfs dfs -cat ${THIS_DIR}/py-output/*
