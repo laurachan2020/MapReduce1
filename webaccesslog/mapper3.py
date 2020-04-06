@@ -15,8 +15,12 @@ for line in sys.stdin:
     if len(words)==4:
         test = pat.match(words[0])
         if test:
-            log_time = time.strptime(words[1][1:],datetime_pattern)
-            if log_time.tm_hour < 12:
-                print '%s\t%s' % ('before noon', 1)
-            else
-                print '%s\t%s' % ('afternoon', 1)
+            try:
+                log_time = time.strptime(words[1][1:],datetime_pattern)
+                if log_time.tm_hour < 12:
+                    print '%s\t%s' % ('beforenoon', 1)
+                else:
+                    print '%s\t%s' % ('afternoon', 1)
+            except Exception:
+                pass
+
