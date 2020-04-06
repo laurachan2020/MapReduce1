@@ -52,5 +52,39 @@ sudo docker run \
 ```  
  output
 ```
+action.php      83
+adminpanel.php  1
+allsubmission.php       170
+announcement.php        8
+archive.php     309
+compile.php     96
+compiler.php    98
+contest.php     249
+contestproblem.php      556
+contestshowcode.php     6
+contestsubmission.php   228
+contestsubmit.php       53
+countdown.php   73
+createadmin.php 4
+description.php 124
+details.php     297
+edit.php        14
+editcontest.php 3
+editcontestproblem.php  12
+home.php        2655
+index.php       6
+login.php       3426
+logout.php      44
+pcompile.php    80
+process.php     317
+profile.php     147
+setcontest.php  6
+setcontestproblem.php   4
+setproblem.php  12
+showcode.php    54
+sign.php        136
+standings.php   167
+submit.php      54
+update.php      7
 
 ```
