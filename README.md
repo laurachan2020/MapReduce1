@@ -106,4 +106,45 @@ sudo docker run \
   -v $(pwd):/usr/local/hadoop/py \
   -it sequenceiq/hadoop-docker:2.7.1 \
   /usr/local/hadoop/py/py_webaccesslog_runner5.sh webaccesslog
-```  
+```
+output
+```
+10.128.2.1~action.php   25
+10.128.2.1~allsubmission.php    43
+10.128.2.1~announcement.php     1
+10.128.2.1~archive.php  64
+10.128.2.1~compile.php  15
+10.128.2.1~compiler.php 20
+10.128.2.1~contest.php  55
+10.128.2.1~contestproblem.php   116
+10.128.2.1~contestsubmission.php        44
+10.128.2.1~contestsubmit.php    10
+10.128.2.1~countdown.php        10
+10.128.2.1~createadmin.php      2
+10.128.2.1~description.php      22
+10.128.2.1~details.php  59
+10.128.2.1~edit.php     4
+10.128.2.1~editcontest.php      1
+10.128.2.1~editcontestproblem.php       3
+10.128.2.1~home.php     875
+10.128.2.1~index.php    3
+10.128.2.1~login.php    1027
+10.128.2.1~logout.php   11
+10.128.2.1~pcompile.php 17
+10.128.2.1~process.php  65
+10.128.2.1~profile.php  48
+10.128.2.1~setcontest.php       2
+10.128.2.1~setproblem.php       4
+10.128.2.1~showcode.php 13
+10.128.2.1~sign.php     35
+10.128.2.1~standings.php        32
+10.128.2.1~submit.php   7
+10.128.2.1~update.php   3
+10.129.2.1~action.php   6
+10.129.2.1~allsubmission.php    24
+10.129.2.1~announcement.php     6
+10.129.2.1~archive.php  51
+10.129.2.1~compile.php  16
+10.129.2.1~compiler.php 7
+......
+```
