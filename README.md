@@ -88,3 +88,22 @@ submit.php      54
 update.php      7
 
 ```
+How many accesses occurred before noon vs afternoon?
+```
+sudo docker run \
+  -v $(pwd):/usr/local/hadoop/py \
+  -it sequenceiq/hadoop-docker:2.7.1 \
+  /usr/local/hadoop/py/py_webaccesslog_runner3.sh webaccesslog
+```  
+ output
+```
+afternoon       13125
+beforenoon      2664
+```
+Per IP, what is the number of accesses per webpage? (ie: how many times did IP 0.0.0.0 access login.php? Home.php? etc)
+```
+sudo docker run \
+  -v $(pwd):/usr/local/hadoop/py \
+  -it sequenceiq/hadoop-docker:2.7.1 \
+  /usr/local/hadoop/py/py_webaccesslog_runner5.sh webaccesslog
+```  
