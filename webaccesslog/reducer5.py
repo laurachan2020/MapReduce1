@@ -31,19 +31,21 @@ for line in sys.stdin:
 
 
     if current_ip_address == ip_address:
-        if pageDic[page_name]:
-            pageDic[page_name] += count
+        if pageDic[ip_address][page_name]:
+            pageDic[ip_address][page_name] += count
         else:
-            pageDic[page_name] = count
-        current_count = pageDic[page_name]
+            pageDic[ip_address][page_name] = count
+        current_count = pageDic[ip_address][page_name]
     else:
         if current_ip_address and current_page_name and current_count:
             # write result to STDOUT
-            print '%s\t%s' % (current_ip_address+':'+current_page_name, current_count)
+            two_keys=current_ip_address+':'+current_page_name
+            print '%s\t%s' % (two_keys, current_count)
         current_count = count
         current_ip_address = ip_address
         current_page_name = page_name
 
 # do not forget to output the last word if needed!
 if current_ip_address == ip_address and current_page_name and current_count:
-    print '%s\t%s' % (current_ip_address+':'+current_page_name, current_count)
+    two_keys = current_ip_address+':'+current_page_name
+    print '%s\t%s' % (two_keys, current_count)
